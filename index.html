@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gR Travel </title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts - Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Owl Carousel CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+
+  </head>
+  <body class="quicksand-normal">
+    <!-- Navbar -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 w-full z-20 bg-transparent text-white py-4 px-6 md:px-20 flex items-center justify-center md:justify-between transition-all duration-300"
+    >
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+        <img
+          id="navbar-logo"
+          src="public/logo_light.png"
+          alt="GR Travel Logo"
+          class="h-10"
+        />
+        
+      </div>
+
+      <!-- Nav Links -->
+      <ul class="hidden md:flex gap-10 text-lg font-medium quicksand-medium">
+        <li><a href="#home" class="hover:text-blue-400 nav-link">HOME</a></li>
+        <li><a href="#packages" class="hover:text-blue-400 nav-link">PACKAGES</a></li>
+        <li><a href="#about" class="hover:text-blue-400 nav-link">ABOUT US</a></li>
+        <li><a href="#contact" class="hover:text-blue-400 nav-link">CONTACT</a></li>
+      </ul>
+
+      <!-- Contact Number -->
+      <a href="tel:+918899001751" class="hidden md:flex items-center gap-2 text-lg font-semibold hover:text-blue-400 transition-colors quicksand-semibold">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+          />
+        </svg>
+        <span>+91 88 99 00 1751</span>
+      </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="owl-carousel" id="home">
+      <!-- Slide 1 -->
+      <div
+        class="item relative"
+        style="background-image: url('public/Banner5.webp');"
+      >
+        <div
+          class="overlay absolute inset-0 flex flex-col justify-between text-white"
+        >
+          <!-- Content Area -->
+          <div
+            class="flex flex-col md:flex-row justify-between items-center w-full px-6 md:px-20 py-32 md:py-0 flex-grow"
+          >
+            <!-- Left Content -->
+            <div class="w-full md:w-1/2 space-y-4">
+              <h1 class="text-3xl md:text-4xl font-bold quicksand-bold">
+                Himachal Pradesh Tour Packages
+
+              </h1>
+              <p class="text-lg">
+                Let's Assist You In Planning Your Dream Himachal Vacation<br />
+                6 Days Shimla Manali Packages from INR 19,990 per person<br />
+                Romantic Tours | Honeymoon Tours | Luxury Tours
+              </p>
+              <button
+                class="text-white px-6 py-3 rounded font-semibold"
+                style="background-color: #337AB7;"
+                onmouseover="this.style.backgroundColor='#025a9e'"
+                onmouseout="this.style.backgroundColor='#0274be'"
+              >
+                +91 88 99 00 1751
+              </button>
+            </div>
+
+            <!-- Right Contact Form -->
+            <div
+              class="w-full md:w-1/3 bg-black bg-opacity-70 p-6 rounded shadow-lg mt-8 md:mt-0"
+            >
+              <h2 class="text-center text-xl font-bold mb-4">CONTACT US</h2>
+              <form class="flex flex-col space-y-3">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  class="p-2 rounded text-black"
+                  required
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="p-2 rounded text-black"
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Phone Number"
+                  class="p-2 rounded text-black"
+                  required
+                />
+                <textarea
+                  placeholder="Enter Your Trip Details"
+                  class="p-2 rounded text-black"
+                ></textarea>
+                <button
+                  type="submit"
+                  class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded"
+"
+                >
+                  START A TRIP REQUEST
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Bottom Bar -->
+          <div
+            class=" bg-opacity-90 flex flex-col md:flex-row justify-between items-center px-6 md:px-20 py-3" style="background-color: #1D6B9B;"
+          >
+            <p class="text-center text-sm md:text-base">
+              Get a Personalized Himachal Package customized for you today.
+            </p>
+            <button
+              class="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-2 rounded mt-3 md:mt-0 callback-btn"
+            >
+              REQUEST A CALL BACK
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div
+        class="item relative"
+        style="background-image: url('public/Banner7.webp');"
+      >
+        <div
+          class="overlay absolute inset-0 flex flex-col justify-between text-white"
+        >
+          <div
+            class="flex flex-col md:flex-row justify-between items-center w-full px-6 md:px-20 py-32 md:py-0 flex-grow"
+          >
+            <div class="w-full md:w-1/2 space-y-4">
+              <h1 class="text-3xl md:text-4xl font-bold quicksand-bold">
+                Explore The Mountains
+              </h1>
+              <p class="text-lg">
+                Discover adventure, peace, and nature's magic.<br />
+                5 Days Dharamshala & Dalhousie Escape | Custom Packages
+              </p>
+              <button
+                class=" hover:bg-blue-700 text-white px-6 py-3 rounded font-semibold"
+                style="background-color: #337AB7;"
+              >
+                +91 88 99 00 1751
+              </button>
+            </div>
+
+            <div
+              class="w-full md:w-1/3 bg-black bg-opacity-70 p-6 rounded shadow-lg mt-8 md:mt-0"
+            >
+              <h2 class="text-center text-xl font-bold mb-4">CONTACT US</h2>
+              <form class="flex flex-col space-y-3">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  class="p-2 rounded text-black"
+                  required
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="p-2 rounded text-black"
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Phone Number"
+                  class="p-2 rounded text-black"
+                  required
+                />
+                <textarea
+                  placeholder="Enter Your Trip Details"
+                  class="p-2 rounded text-black"
+                ></textarea>
+                <button
+                  type="submit"
+                  class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded"
+                >
+                  START A TRIP REQUEST
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div
+            class=" bg-opacity-90 flex flex-col md:flex-row justify-between items-center px-6 md:px-20 py-3"
+             style="background-color: #1D6B9B;"
+          >
+            <p class="text-center text-sm md:text-base">
+              Get a Personalized Himachal Package customized for you today.
+            </p>
+            <button
+              class="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-2 rounded mt-3 md:mt-0 callback-btn"
+            >
+              REQUEST A CALL BACK
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bestselling Himachal Package Section -->
+    <section class="bg-white py-16 px-6 md:px-20 relative" id="packages">
+      <!-- Floating Action Buttons -->
+      <div class="fixed right-6 top-1/2 transform -translate-y-1/2 z-30 flex flex-col gap-4">
+        <a href="tel:+918899001751" class="w-12 h-12 bg-yellow-500 hover:bg-yellow-600 rounded-full shadow-lg flex items-center justify-center text-white transition-colors">
+          <i class="fas fa-phone"></i>
+        </a>
+        <button class="w-12 h-12 bg-green-500 hover:bg-green-600 rounded-full shadow-lg flex items-center justify-center text-white transition-colors">
+          <i class="fab fa-whatsapp"></i>
+        </button>
+        <button class="w-12 h-12 bg-blue-500 hover:bg-blue-600 rounded-full shadow-lg flex items-center justify-center text-white transition-colors back-to-top">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </div>
+
+      <!-- Section Header -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 uppercase mb-4 quicksand-bold">
+          BESTSELLING HIMACHAL PACKAGE
+        </h2>
+        
+        <!-- Separator -->
+        <div class="flex items-center justify-center mb-4">
+          <div class="w-8 h-0.5 bg-blue-600"></div>
+          <div class="w-3 h-3 bg-black mx-2"></div>
+          <div class="w-8 h-0.5 bg-blue-600"></div>
+        </div>
+        
+        <p class="text-gray-700 text-lg">
+          We make your trip memorable
+        </p>
+      </div>
+
+      <!-- Package Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        
+        <!-- Card 1: Romantic Getaway to Shimla Manali Tour -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+          <!-- Image with overlay -->
+          <div class="relative">
+            <img 
+              src="public/1-3.webp" 
+              alt="Shimla Manali Tour" 
+              class="w-full h-48 object-cover"
+            >
+            <!-- Duration Overlay -->
+            <div class="absolute bottom-4 right-4  text-white px-3 py-1 rounded text-sm font-semibold" style="background-color: #1D6B9B;">
+              4N 5D CUSTOMIZABLE
+            </div>
+          </div>
+          
+          <!-- Card Content -->
+          <div class="p-6">
+            <!-- Title -->
+            <h3 class="text-lg font-bold text-gray-900 mb-3 text-center">
+              Romantic Getaway to Shimla Manali Tour
+            </h3>
+            
+            <!-- Details -->
+            <div class="text-sm text-gray-600 mb-4 space-y-1 text-center">
+              <p>Pick Drop - Delhi</p>
+              <p>2N Shimla | 2N Manali</p>
+            </div>
+            
+            <!-- Service Icons -->
+            <div class="flex justify-between mb-6">
+              <div class="text-center">
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mb-1">
+                  <i class="fas fa-car text-white"></i>
+                </div>
+                <span class="text-xs text-gray-600">Transfers</span>
+              </div>
+              <div class="text-center">
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mb-1">
+                  <i class="fas fa-hotel text-white"></i>
+                </div>
+                <span class="text-xs text-gray-600">Hotel</span>
+              </div>
+              <div class="text-center">
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mb-1">
+                  <i class="fas fa-binoculars text-white"></i>
+                </div>
+                <span class="text-xs text-gray-600">Sightseeing</span>
+              </div>
+              <div class="text-center">
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mb-1">
+                  <i class="fas fa-utensils text-white"></i>
+                </div>
+                <span class="text-xs text-gray-600">Meals</span>
+              </div>
+              <div class="text-center">
+                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mb-1">
+                  <i class="fas fa-headset text-blue-600"></i>
+                </div>
+                <span class="text-xs text-gray-600">Virtual Guide</span>
+              </div>
+            </div>
+            
+            <!-- Pricing Tiers -->
+            <div class="border-t pt-4 mb-4">
+              <div class="grid grid-cols-3 gap-2 text-center">
+                <div class="border-r border-gray-200 pr-2">
+                  <div class="font-bold text-gray-900">Deluxe</div>
+                  <div class="text-lg font-bold text-gray-900">18,990</div>
+                  <div class="text-xs text-gray-500">(Per Person)</div>
+                </div>
+                <div class="border-r border-gray-200 pr-2">
+                  <div class="font-bold text-gray-900">Super Deluxe</div>
+                  <div class="text-lg font-bold text-gray-900">25,990</div>
+                  <div class="text-xs text-gray-500">(Per Person)</div>
+                </div>
+                <div>
+                  <div class="font-bold text-gray-900">Premium</div>
+                  <div class="text-lg font-bold text-gray-900">25,990</div>
+                  <div class="text-xs text-gray-500">(Per Person)</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Enquire Button -->
+            <button class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-1 rounded transition-colors enquire-btn">
+              ENQUIRE NOW
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: Best of Shimla Manali Tour - Honeymoon Special Tour -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+          <!-- Image with overlay -->
+          <div class="relative">
+            <img 
+              src="public/GR-Travel-About-us.webp" 
+              alt="Honeymoon Special Tour" 
+              class="w-full h-48 object-cover"
+            >
+            <!-- Duration Overlay -->
+            <div class="absolute bottom-4 right-4 text-white px-3 py-1 rounded text-sm font-semibold" style="background-color: #1D6B9B;">
+              5N 6D CUSTOMIZABLE
+            </div>
+          </div>
+          
+          <!-- Card Content -->
+          <div class="p-6">
+            <!-- Title -->
+            <h3 class="text-lg font-bold text-gray-900 mb-3 text-center">
+              Best of Shimla Manali Tour - Honeymoon Special Tour
+            </h3>
+            
+            <!-- Details -->
+            <div class="text-sm text-gray-600 mb-4 space-y-1 text-center">
+              <p>Pick Drop - Chandigarh</p>
+              <p>2N Shimla | 3N Manali</p>
+            </div>
+            
+            <!-- Service Icons -->
+            <div class="flex justify-between mb-6">
+              <div class="text-center">
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mb-1">
+                  <i class="fas fa-car text-white"></i>
+                </div>
+                <span class="text-xs text-gray-600">Transfers</span>
+              </div>
+              <div class="text-center">
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mb-1">
+                  <i class="fas fa-hotel text-white"></i>
+                </div>
+                <span class="text-xs text-gray-600">Hotel</span>
+              </div>
+              <div class="text-center">
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mb-1">
+                  <i class="fas fa-binoculars text-white"></i>
+                </div>
+                <span class="text-xs text-gray-600">Sightseeing</span>
+              </div>
+              <div class="text-center">
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mb-1">
+                  <i class="fas fa-utensils text-white"></i>
+                </div>
+                <span class="text-xs text-gray-600">Meals</span>
+              </div>
+              <div class="text-center">
+                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mb-1">
+                  <i class="fas fa-headset text-blue-600"></i>
+                </div>
+                <span class="text-xs text-gray-600">Virtual Guide</span>
+              </div>
+            </div>
+            
+            <!-- Pricing Tiers -->
+            <div class="border-t pt-4 mb-4">
+              <div class="grid grid-cols-3 gap-2 text-center">
+                <div class="border-r border-gray-200 pr-2">
+                  <div class="font-bold text-gray-900">Deluxe</div>
+                  <div class="text-lg font-bold text-gray-900">20,990</div>
+                  <div class="text-xs text-gray-500">(Per Person)</div>
+                </div>
+                <div class="border-r border-gray-200 pr-2">
+                  <div class="font-bold text-gray-900">Super Deluxe</div>
+                  <div class="text-lg font-bold text-gray-900">23,990</div>
+                  <div class="text-xs text-gray-500">(Per Person)</div>
+                </div>
+                <div>
+                  <div class="font-bold text-gray-900">Premium</div>
+                  <div class="text-lg font-bold text-gray-900">28,990</div>
+                  <div class="text-xs text-gray-500">(Per Person)</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Enquire Button -->
+            <button class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-1 rounded transition-colors enquire-btn">
+              ENQUIRE NOW
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3: Exclusive Manali Tour from Delhi—with Kasol visit -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+          <!-- Image with overlay -->
+          <div class="relative">
+            <img 
+              src="public/Banner5.webp" 
+              alt="Exclusive Manali Tour" 
+              class="w-full h-48 object-cover"
+            >
+            <!-- Duration Overlay -->
+            <div class="absolute bottom-4 right-4  text-white px-3 py-1 rounded text-sm font-semibold" style="background-color: #1D6B9B;">
+              4N 5D CUSTOMIZABLE
+            </div>
+          </div>
+          
+          <!-- Card Content -->
+          <div class="p-6">
+            <!-- Title -->
+            <h3 class="text-lg font-bold text-gray-900 mb-3 text-center">
+              Exclusive Manali Tour from Delhi—with Kasol visit
+            </h3>
+            
+            <!-- Details -->
+            <div class="text-sm text-gray-600 mb-4 space-y-1 text-center">
+              <p>Tour Pick Drop - Delhi</p>
+              <p>4N Manali</p>
+            </div>
+            
+            <!-- Service Icons -->
+            <div class="flex justify-between mb-6">
+              <div class="text-center">
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mb-1">
+                  <i class="fas fa-car text-white"></i>
+                </div>
+                <span class="text-xs text-gray-600">Transfers</span>
+              </div>
+              <div class="text-center">
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mb-1">
+                  <i class="fas fa-hotel text-white"></i>
+                </div>
+                <span class="text-xs text-gray-600">Hotel</span>
+              </div>
+              <div class="text-center">
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mb-1">
+                  <i class="fas fa-binoculars text-white"></i>
+                </div>
+                <span class="text-xs text-gray-600">Sightseeing</span>
+              </div>
+              <div class="text-center">
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mb-1">
+                  <i class="fas fa-utensils text-white"></i>
+                </div>
+                <span class="text-xs text-gray-600">Meals</span>
+              </div>
+              <div class="text-center">
+                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mb-1">
+                  <i class="fas fa-headset text-blue-600"></i>
+                </div>
+                <span class="text-xs text-gray-600">Virtual Guide</span>
+              </div>
+            </div>
+            
+            <!-- Pricing Tiers -->
+            <div class="border-t pt-4 mb-4">
+              <div class="grid grid-cols-3 gap-2 text-center">
+                <div class="border-r border-gray-200 pr-2">
+                  <div class="font-bold text-gray-900">Deluxe</div>
+                  <div class="text-lg font-bold text-gray-900">19,990</div>
+                  <div class="text-xs text-gray-500">(Per Person)</div>
+                </div>
+                <div class="border-r border-gray-200 pr-2">
+                  <div class="font-bold text-gray-900">Super Deluxe</div>
+                  <div class="text-lg font-bold text-gray-900">22,490</div>
+                  <div class="text-xs text-gray-500">(Per Person)</div>
+                </div>
+                <div>
+                  <div class="font-bold text-gray-900">Premium</div>
+                  <div class="text-lg font-bold text-gray-900">26,990</div>
+                  <div class="text-xs text-gray-500">(Per Person)</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Enquire Button -->
+            <button class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-1 rounded transition-colors enquire-btn">
+              ENQUIRE NOW
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="py-16 px-6 md:px-20" id="about">
+      <!-- Section Header -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-b uppercase mb-4">
+          WHAT WE DO
+        </h2>
+        
+        <!-- Separator -->
+        <div class="flex items-center justify-center mb-4">
+          <div class="w-8 h-0.5 bg-black"></div>
+          <div class="w-3 h-3 bg-black mx-2"></div>
+          <div class="w-8 h-0.5 bg-black"></div>
+        </div>
+        
+        <p class="text-black text-lg">
+          Get you dream vacation planned by our experts
+        </p>
+      </div>
+
+      <!-- Service Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        
+        <!-- Card 1: Premium Services -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+          <!-- Image -->
+          <div class="relative">
+            <img 
+              src="public/Premium-Services1.webp" 
+              alt="Premium Services" 
+              class="w-full h-48 object-cover"
+            >
+          </div>
+          
+          <!-- Card Content -->
+          <div class="p-6 text-center">
+            <!-- Title -->
+            <h3 class="text-xl font-bold text-gray-900 mb-4">
+              Premium Services
+            </h3>
+            
+            <!-- Description -->
+            <p class="text-gray-600 leading-relaxed">
+              We will connect you with our travel experts who will work with you to plan your Premium Himachal Package. We promise this connect would for a lifetime!
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2: Personalized Experience -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+          <!-- Image -->
+          <div class="relative">
+            <img 
+              src="public/feature-image-2.webp" 
+              alt="Personalized Experience" 
+              class="w-full h-48 object-cover"
+            >
+          </div>
+          
+          <!-- Card Content -->
+          <div class="p-6 text-center">
+            <!-- Title -->
+            <h3 class="text-xl font-bold text-gray-900 mb-4">
+              Personalized Experience
+            </h3>
+            
+            <!-- Description -->
+            <p class="text-gray-600 leading-relaxed">
+              Our experts would ensure that your Himachal Travel Plan is personalized according to your taste and optimized according to the budget available with you!
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3: Value for Money -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+          <!-- Image -->
+          <div class="relative">
+            <img 
+              src="public/Value-for-Money-2.webp" 
+              alt="Value for Money" 
+              class="w-full h-48 object-cover"
+            >
+          </div>
+          
+          <!-- Card Content -->
+          <div class="p-6 text-center">
+            <!-- Title -->
+            <h3 class="text-xl font-bold text-gray-900 mb-4">
+              Value for Money
+            </h3>
+            
+            <!-- Description -->
+            <p class="text-gray-600 leading-relaxed">
+              We ensure that your trip experience is value for Money. We understand that this is your vacation. Count on us for your peace of mind!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Blue Header Bar -->
+    <div class=" py-3 px-6 md:px-20 flex flex-col md:flex-row justify-between items-center" style="background-color: #1D6B9B;">
+      <p class="text-white text-sm md:text-base text-center md:text-left mb-2 md:mb-0">
+        Get a Personalized Himachal Package customized for you today.
+      </p>
+      <button class="bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-2 rounded uppercase callback-btn">
+        REQUEST A CALL BACK
+      </button>
+    </div>
+
+    <!-- G R Travel Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=60'); background-size: cover; background-position: center;">
+      <!-- Dark Overlay -->
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+      
+      <!-- Content -->
+      <div class="relative z-10 text-center text-white px-6 md:px-20 max-w-4xl mx-auto">
+        <!-- Main Title -->
+        <h1 class="text-4xl md:text-6xl font-bold uppercase mb-6 quicksand-bold">
+          G R TRAVEL
+        </h1>
+        
+        <!-- Separator -->
+        <div class="flex items-center justify-center mb-6">
+          <div class="w-8 h-0.5 bg-blue-400"></div>
+          <div class="w-3 h-3 bg-white mx-2"></div>
+          <div class="w-8 h-0.5 bg-blue-400"></div>
+        </div>
+        
+        <!-- Star Rating -->
+        <div class="flex justify-center mb-6">
+          <div class="flex space-x-1">
+            <i class="fas fa-star text-yellow-400 text-xl"></i>
+            <i class="fas fa-star text-yellow-400 text-xl"></i>
+            <i class="fas fa-star text-yellow-400 text-xl"></i>
+            <i class="fas fa-star text-yellow-400 text-xl"></i>
+            <i class="fas fa-star text-yellow-400 text-xl"></i>
+          </div>
+        </div>
+        
+        <!-- Tagline -->
+        <h2 class="text-2xl md:text-4xl font-bold mb-8">
+          Explore Himachal; Explore the Paradise
+        </h2>
+        
+        <!-- Detailed Content -->
+        <div class="text-left md:text-center mb-8">
+          <p class="text-lg leading-relaxed">
+            Travel is life changing, and being a part of your once in a lifetime tour means the world to us. At GR Travel, we are carefully select the best <strong>travel resources</strong> to design that perfect <strong>vacation</strong> for you. With <strong>24x7 SUPPORT</strong>, selective screening, unmatched destination expertise and <strong>personalized services</strong>, we ensure that your trip is a memory of a lifetime. Relive your life again and add a little spice to it with exciting <strong>Himachal tour packages</strong>. We offer customized <strong>Premium Himachal Tour & Luxury Packages</strong>. So stop dreaming alone, let's start planning your luxury Himachal package with us.
+          </p>
+        </div>
+        
+        <!-- Call to Action Button -->
+        <button class="bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded text-lg uppercase contact-btn">
+          CONTACT US NOW
+        </button>
+      </div>
+    </section>
+
+    <!-- Customize Your Trip Section -->
+    <section class="relative py-16 px-6 md:px-20" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=60'); background-size: cover; background-position: center;">
+      <!-- Dark Overlay -->
+      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+      
+      <!-- Content -->
+      <div class="relative z-10 max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-white uppercase mb-4 quicksand-bold">
+            CUSTOMIZE YOUR TRIP
+          </h2>
+          
+          <!-- Separator -->
+          <div class="flex items-center justify-center mb-4">
+            <div class="w-8 h-0.5 bg-blue-400"></div>
+            <div class="w-3 h-3 bg-white mx-2"></div>
+            <div class="w-8 h-0.5 bg-blue-400"></div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          <!-- Left Content Area -->
+          <div class="text-white">
+            <div class="space-y-6 mb-8">
+              <p class="text-xl font-medium">Need help in your Himachal holiday planning?</p>
+              <p class="text-lg">Connect with our Holiday Experts to customize your Himachal travel plan</p>
+              <p class="text-lg font-semibold">Plan your trip now</p>
+            </div>
+            
+            <!-- Service Icons -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="text-center">
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3">
+                  <i class="fas fa-hotel text-blue-600 text-2xl"></i>
+                </div>
+                <p class="text-white text-sm">Choose your desired hotel</p>
+              </div>
+              <div class="text-center">
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3">
+                  <i class="fas fa-puzzle-piece text-blue-600 text-2xl"></i>
+                </div>
+                <p class="text-white text-sm">Flexibility in itineraries</p>
+              </div>
+              <div class="text-center">
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3">
+                  <i class="fas fa-binoculars text-blue-600 text-2xl"></i>
+                </div>
+                <p class="text-white text-sm">Add must-do-activities to your package</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Form Area -->
+          <div class="bg-black bg-opacity-90 p-8 rounded-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <input
+                type="text"
+                placeholder="Name"
+                class="p-3 rounded text-black bg-white border border-gray-300 focus:border-blue-500 focus:outline-none"
+              />
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                class="p-3 rounded text-black bg-white border border-gray-300 focus:border-blue-500 focus:outline-none"
+              />
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <input
+                type="email"
+                placeholder="Email"
+                class="p-3 rounded text-black bg-white border border-gray-300 focus:border-blue-500 focus:outline-none"
+              />
+              <input
+                type="date"
+                placeholder="Date of Travel"
+                class="p-3 rounded text-black bg-white border border-gray-300 focus:border-blue-500 focus:outline-none"
+              />
+            </div>
+            <div class="mb-6">
+              <textarea
+                placeholder="Trip Details"
+                rows="4"
+                class="w-full p-3 rounded text-black bg-white border border-gray-300 focus:border-blue-500 focus:outline-none resize-none"
+              ></textarea>
+            </div>
+            <button class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded uppercase transition-colors contact-btn">
+              LETS START
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-100 py-16 px-6 md:px-20" id="contact">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          
+          <!-- Contact Us Section -->
+          <div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Contact Us</h3>
+            <form class="space-y-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  class="p-3 rounded border border-gray-300 focus:border-blue-500 focus:outline-none bg-white"
+                />
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  class="p-3 rounded border border-gray-300 focus:border-blue-500 focus:outline-none bg-white"
+                />
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="p-3 rounded border border-gray-300 focus:border-blue-500 focus:outline-none bg-white"
+                />
+                <input
+                  type="date"
+                  placeholder="Date of Travel"
+                  class="p-3 rounded border border-gray-300 focus:border-blue-500 focus:outline-none bg-white"
+                />
+              </div>
+              <textarea
+                placeholder="Trip Details"
+                rows="3"
+                class="w-full p-3 rounded border border-gray-300 focus:border-blue-500 focus:outline-none resize-none bg-white"
+              ></textarea>
+              <button class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded uppercase transition-colors">
+                LETS START
+              </button>
+            </form>
+          </div>
+
+          <!-- Connect with us Section -->
+          <div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Connect with us</h3>
+            <p class="text-gray-600 mb-6">GR Travel - Handcrafted Vacations</p>
+            
+            <div class="space-y-4">
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-phone text-gray-500"></i>
+                <a href="tel:+918899001751" class="text-blue-600 hover:text-blue-800">+91 88 99 00 1751</a>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-phone text-gray-500"></i>
+                <a href="tel:+918899001751" class="text-blue-600 hover:text-blue-800">+91 88 99 00 1751</a>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-envelope text-gray-500"></i>
+                <a href="mailto:bookings@grtravel.co.in" class="text-blue-600 hover:text-blue-800">bookings@grtravel.co.in</a>
+              </div>
+            </div>
+
+            <div class="mt-8 space-y-4">
+              <div class="flex items-start space-x-3">
+                <i class="fas fa-map-marker-alt text-gray-500 mt-1"></i>
+                <div>
+                  <p class="text-gray-700 font-medium">Head Office:</p>
+                  <p class="text-gray-600 text-sm">#506, 4th Floor, Jakbro Complex, Munawar Abad, Srinagar, J&K 190001</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <i class="fas fa-map-marker-alt text-gray-500 mt-1"></i>
+                <div>
+                  <p class="text-gray-700 font-medium">Manali Office:</p>
+                  <p class="text-gray-600 text-sm">Left Bank, Aleo, Near HP Petrol Pump, New Manali (HP). 175131</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Company Section -->
+          <div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Company</h3>
+            <nav class="space-y-3 mb-8">
+              <a href="#" class="block text-gray-600 hover:text-blue-600 transition-colors">About</a>
+              <a href="#" class="block text-gray-600 hover:text-blue-600 transition-colors">Packages</a>
+              <a href="#" class="block text-gray-600 hover:text-blue-600 transition-colors">Customize My Trip</a>
+              <a href="#" class="block text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+            </nav>
+            <p class="text-gray-600 text-sm">
+              GRT - Handcrafted vacations is registered with State Department of Tourism.
+            </p>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-gray-300 mt-12 pt-8 text-center">
+          <p class="text-gray-600 text-sm">
+            Copyright © 2025 GRT Handcrafted Vacations. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+      <div class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <!-- Modal Header -->
+        <div class="flex justify-between items-center p-6 border-b border-gray-200">
+          <h3 class="text-2xl font-bold text-gray-900 uppercase">CONTACT US</h3>
+          <button id="closeModal" class="text-gray-400 hover:text-gray-600 text-2xl font-bold">
+            ×
+          </button>
+        </div>
+        
+        <!-- Modal Body -->
+        <div class="p-6">
+          <form class="space-y-4">
+            <!-- Name -->
+            <input
+              type="text"
+              placeholder="Name"
+              class="w-full p-3 border border-gray-300 rounded focus:border-blue-500 focus:outline-none"
+              required
+            />
+            
+            <!-- Phone Number -->
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              class="w-full p-3 border border-gray-300 rounded focus:border-blue-500 focus:outline-none"
+              required
+            />
+            
+            <!-- Email -->
+            <input
+              type="email"
+              placeholder="Email"
+              class="w-full p-3 border border-gray-300 rounded focus:border-blue-500 focus:outline-none"
+              required
+            />
+            
+            <!-- Trip Duration -->
+            <input
+              type="text"
+              placeholder="Trip Duration"
+              class="w-full p-3 border border-gray-300 rounded focus:border-blue-500 focus:outline-none"
+            />
+            
+            <!-- No. of Travelers -->
+            <input
+              type="number"
+              placeholder="No. of Travelers"
+              class="w-full p-3 border border-gray-300 rounded focus:border-blue-500 focus:outline-none"
+            />
+            
+            <!-- Date of Travel -->
+            <input
+              type="date"
+              placeholder="Date of Travel"
+              class="w-full p-3 border border-gray-300 rounded focus:border-blue-500 focus:outline-none"
+            />
+            
+            <!-- Trip Details -->
+            <textarea
+              placeholder="Trip Details"
+              rows="4"
+              class="w-full p-3 border border-gray-300 rounded focus:border-blue-500 focus:outline-none resize-none"
+            ></textarea>
+            
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded uppercase transition-colors"
+            >
+              LETS START
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call Back Modal -->
+    <div id="callbackModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+      <div class="bg-white rounded-lg shadow-xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
+        <!-- Modal Header -->
+        <div class="flex justify-between items-center p-6 border-b border-gray-200">
+          <h3 class="text-2xl font-bold text-gray-900 uppercase">REQUEST A CALL BACK</h3>
+          <button id="closeCallbackModal" class="text-gray-400 hover:text-gray-600 text-2xl font-bold">
+            ×
+          </button>
+        </div>
+        
+        <!-- Modal Body -->
+        <div class="p-6">
+          <form class="space-y-4">
+            <!-- Name -->
+            <input
+              type="text"
+              placeholder="Name"
+              class="w-full p-3 border border-gray-300 rounded focus:border-blue-500 focus:outline-none"
+              required
+            />
+            
+            <!-- Email -->
+            <input
+              type="email"
+              placeholder="Email"
+              class="w-full p-3 border border-gray-300 rounded focus:border-blue-500 focus:outline-none"
+              required
+            />
+            
+            <!-- Phone Number -->
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              class="w-full p-3 border border-gray-300 rounded focus:border-blue-500 focus:outline-none"
+              required
+            />
+            
+            <!-- Trip Details -->
+            <textarea
+              placeholder="Trip Details"
+              rows="4"
+              class="w-full p-3 border border-gray-300 rounded focus:border-blue-500 focus:outline-none resize-none"
+            ></textarea>
+            
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded uppercase transition-colors"
+            >
+              REQUEST CALL BACK
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script>
+      $(".owl-carousel").owlCarousel({
+        items: 1,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: false,
+        dots: false,
+        nav: false,
+        animateOut: "fadeOut",
+      });
+
+      // Back to top button functionality
+      $(document).ready(function() {
+        // Initially hide the back to top button
+        $('.back-to-top').hide();
+        
+        // Show/hide back to top button and navbar styling based on scroll position
+        $(window).scroll(function() {
+          const scrollTop = $(this).scrollTop();
+          const navbar = $('#navbar');
+          const logo = $('#navbar-logo');
+          
+          if (scrollTop > 100) {
+            $('.back-to-top').fadeIn();
+            // Add white background and dark text when scrolling
+            navbar.removeClass('bg-transparent text-white').addClass('bg-white text-gray-900 shadow-md');
+            // Change to dark logo for better contrast on white background
+            logo.attr('src', 'public/logo_dark.png');
+          } else {
+            $('.back-to-top').fadeOut();
+            // Remove white background and restore transparent with white text
+            navbar.removeClass('bg-white text-gray-900 shadow-md').addClass('bg-transparent text-white');
+            // Change back to light logo for transparent background
+            logo.attr('src', 'public/logo_light.png');
+          }
+        });
+        
+        // Smooth scroll to top when button is clicked
+        $('.back-to-top').click(function() {
+          $('html, body').animate({scrollTop: 0}, 800);
+          return false;
+        });
+
+        // Modal functionality
+        const modal = $('#contactModal');
+        const callbackModal = $('#callbackModal');
+        
+        // Show contact modal when clicking enquire buttons
+        $('.enquire-btn, .contact-btn').click(function(e) {
+          e.preventDefault();
+          modal.removeClass('hidden');
+          $('body').addClass('overflow-hidden');
+        });
+        
+        // Show callback modal when clicking callback buttons
+        $('.callback-btn').click(function(e) {
+          e.preventDefault();
+          callbackModal.removeClass('hidden');
+          $('body').addClass('overflow-hidden');
+        });
+        
+        // Close contact modal when clicking close button
+        $('#closeModal').click(function() {
+          modal.addClass('hidden');
+          $('body').removeClass('overflow-hidden');
+        });
+        
+        // Close callback modal when clicking close button
+        $('#closeCallbackModal').click(function() {
+          callbackModal.addClass('hidden');
+          $('body').removeClass('overflow-hidden');
+        });
+        
+        // Close contact modal when clicking overlay
+        modal.click(function(e) {
+          if (e.target === this) {
+            modal.addClass('hidden');
+            $('body').removeClass('overflow-hidden');
+          }
+        });
+        
+        // Close callback modal when clicking overlay
+        callbackModal.click(function(e) {
+          if (e.target === this) {
+            callbackModal.addClass('hidden');
+            $('body').removeClass('overflow-hidden');
+          }
+        });
+        
+        // Close modals with Escape key
+        $(document).keyup(function(e) {
+          if (e.keyCode === 27) { // Escape key
+            modal.addClass('hidden');
+            callbackModal.addClass('hidden');
+            $('body').removeClass('overflow-hidden');
+          }
+        });
+
+        // Smooth scrolling for navigation links
+        $('.nav-link').click(function(e) {
+          e.preventDefault();
+          const target = $(this).attr('href');
+          const targetSection = $(target);
+          
+          if (targetSection.length) {
+            $('html, body').animate({
+              scrollTop: targetSection.offset().top - 80 // Offset for fixed navbar
+            }, 800);
+          }
+        });
+
+        // Form validation functions
+        function validateEmail(email) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailRegex.test(email);
+        }
+
+        function validatePhone(phone) {
+          const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
+          return phoneRegex.test(phone);
+        }
+
+        function validateName(name) {
+          return name.trim().length >= 2;
+        }
+
+        function validateRequired(value) {
+          return value.trim().length > 0;
+        }
+
+        function showError(input, message) {
+          const errorDiv = input.siblings('.error-message');
+          if (errorDiv.length === 0) {
+            input.after(`<div class="error-message text-red-500 text-sm mt-1">${message}</div>`);
+          } else {
+            errorDiv.text(message);
+          }
+          input.addClass('border-red-500').removeClass('border-gray-300');
+        }
+
+        function clearError(input) {
+          input.siblings('.error-message').remove();
+          input.removeClass('border-red-500').addClass('border-gray-300');
+        }
+
+        function validateForm(form) {
+          let isValid = true;
+          const inputs = form.find('input, textarea');
+          
+          inputs.each(function() {
+            const input = $(this);
+            const value = input.val().trim();
+            const type = input.attr('type');
+            const placeholder = input.attr('placeholder');
+            
+            clearError(input);
+            
+            if (input.prop('required') && !validateRequired(value)) {
+              showError(input, `${placeholder} is required`);
+              isValid = false;
+            } else if (value.length > 0) {
+              if (type === 'email' && !validateEmail(value)) {
+                showError(input, 'Please enter a valid email address');
+                isValid = false;
+              } else if (type === 'tel' && !validatePhone(value)) {
+                showError(input, 'Please enter a valid phone number');
+                isValid = false;
+              } else if (placeholder && placeholder.toLowerCase().includes('name') && !validateName(value)) {
+                showError(input, 'Name must be at least 2 characters long');
+                isValid = false;
+              }
+            }
+          });
+          
+          return isValid;
+        }
+
+        // Form submission handlers
+        $('form').on('submit', function(e) {
+          e.preventDefault();
+          
+          if (validateForm($(this))) {
+            // Show success message
+            const form = $(this);
+            const submitBtn = form.find('button[type="submit"]');
+            const originalText = submitBtn.text();
+            
+            submitBtn.text('Sending...').prop('disabled', true);
+            
+            // Simulate form submission (replace with actual submission logic)
+            setTimeout(() => {
+              submitBtn.text('Sent Successfully!').addClass('bg-green-600');
+              
+              // Reset form after 2 seconds
+              setTimeout(() => {
+                form[0].reset();
+                submitBtn.text(originalText).removeClass('bg-green-600').prop('disabled', false);
+                form.find('.error-message').remove();
+                form.find('input, textarea').removeClass('border-red-500').addClass('border-gray-300');
+              }, 2000);
+            }, 1000);
+          }
+        });
+
+        // Real-time validation
+        $('input, textarea').on('blur', function() {
+          const input = $(this);
+          const value = input.val().trim();
+          const type = input.attr('type');
+          const placeholder = input.attr('placeholder');
+          
+          clearError(input);
+          
+          if (value.length > 0) {
+            if (type === 'email' && !validateEmail(value)) {
+              showError(input, 'Please enter a valid email address');
+            } else if (type === 'tel' && !validatePhone(value)) {
+              showError(input, 'Please enter a valid phone number');
+            } else if (placeholder && placeholder.toLowerCase().includes('name') && !validateName(value)) {
+              showError(input, 'Name must be at least 2 characters long');
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+
