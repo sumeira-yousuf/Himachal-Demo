@@ -1,22 +1,21 @@
-// EmailJS Configuration
+
 const EMAILJS_CONFIG = {
   USER_ID: "st7TIIV_ztcXD_aif",
   SERVICE_ID: "service_wzfo9df",
   TEMPLATE_ID: "template_i5xrfto",
 };
 
-// Initialize EmailJS
 (function () {
   emailjs.init(EMAILJS_CONFIG.USER_ID);
 })();
 
-// EmailJS Handler
+
 class EmailJSHandler {
   constructor() {
     this.isInitialized = typeof emailjs !== "undefined";
   }
 
-  // Send email
+  
   async sendEmail(formData) {
     if (!this.isInitialized) {
       throw new Error("EmailJS not initialized");
@@ -101,7 +100,7 @@ class EmailJSHandler {
     return formData;
   }
 
-  // Show success message
+  
   showSuccessMessage(form, button) {
     const originalText = button.textContent;
     button.textContent = "Sent Successfully!";
