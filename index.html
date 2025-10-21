@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>gR Travel </title>
 
-    <!-- Tailwind CSS -->
+    
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Font Awesome for icons -->
+  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Google Fonts - Quicksand -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-    <!-- Custom CSS -->
+ 
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Owl Carousel CSS -->
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
@@ -1053,6 +1053,12 @@
     <!-- Owl Carousel JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <!-- EmailJS Configuration -->
+    <script src="emailjs-config.js"></script>
 
     <script>
       $(".owl-carousel").owlCarousel({
@@ -1232,32 +1238,8 @@
           return isValid;
         }
 
-        // Form submission handlers
-        $('form').on('submit', function(e) {
-          e.preventDefault();
-          
-          if (validateForm($(this))) {
-            // Show success message
-            const form = $(this);
-            const submitBtn = form.find('button[type="submit"]');
-            const originalText = submitBtn.text();
-            
-            submitBtn.text('Sending...').prop('disabled', true);
-            
-            // Simulate form submission (replace with actual submission logic)
-            setTimeout(() => {
-              submitBtn.text('Sent Successfully!').addClass('bg-green-600');
-              
-              // Reset form after 2 seconds
-              setTimeout(() => {
-                form[0].reset();
-                submitBtn.text(originalText).removeClass('bg-green-600').prop('disabled', false);
-                form.find('.error-message').remove();
-                form.find('input, textarea').removeClass('border-red-500').addClass('border-gray-300');
-              }, 2000);
-            }, 1000);
-          }
-        });
+        // Form submission handlers - Now handled by EmailJS
+        // The emailjs-config.js file handles all form submissions automatically
 
         // Real-time validation
         $('input, textarea').on('blur', function() {
