@@ -1,0 +1,16 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Logs
+*.log
