@@ -1,6 +1,4 @@
-// Hero Slider Form Interaction Functionality
 $(document).ready(function () {
-  // Initialize Owl Carousel for background slides only
   const owl = $(".owl-carousel").owlCarousel({
     items: 1,
     loop: true,
@@ -12,8 +10,8 @@ $(document).ready(function () {
     animateOut: "fadeOut",
   });
 
-  // Pause slider when user interacts with forms
   let formInteractionTimer;
+  let isFormBeingUsed = false; // Track if user is actively using the form
 
   function pauseSlider() {
     owl.trigger("stop.owl.autoplay");
@@ -29,10 +27,9 @@ $(document).ready(function () {
 
     formInteractionTimer = setTimeout(function () {
       resumeSlider();
-    }, 2000); // Resume after 2 seconds of no interaction
+    }, 2000);
   }
 
-  // Add event listeners to all form inputs in hero section
   $("#heroContactForm input, #heroContactForm textarea").on(
     "focus click input",
     function () {
@@ -40,7 +37,6 @@ $(document).ready(function () {
     }
   );
 
-  // Also pause on any form interaction
   $("#heroContactForm input, #heroContactForm textarea").on(
     "keydown keyup change",
     function () {
@@ -48,17 +44,32 @@ $(document).ready(function () {
     }
   );
 
-  // Hero form submission
+  // Track static contact form interactions to prevent hiding during use
+  $("#staticContactForm input, #staticContactForm textarea").on(
+    "focus click input keydown keyup change",
+    function () {
+      isFormBeingUsed = true;
+    }
+  );
+
+  // Reset form usage flag when user stops interacting
+  $("#staticContactForm input, #staticContactForm textarea").on(
+    "blur",
+    function () {
+      setTimeout(function () {
+        isFormBeingUsed = false;
+      }, 1000); // Wait 1 second after blur to allow for continued interaction
+    }
+  );
+
   $("#heroContactForm").on("submit", function (e) {
     e.preventDefault();
 
     const submitButton = $(this).find('button[type="submit"]');
     const originalText = submitButton.text();
 
-    // Show loading state
     submitButton.text("SENDING...").prop("disabled", true);
 
-    // Get form data
     const formData = {
       name: $(this).find('input[name="name"]').val(),
       email: $(this).find('input[name="email"]').val(),
@@ -66,14 +77,10 @@ $(document).ready(function () {
       message: $(this).find('textarea[name="message"]').val(),
     };
 
-    // Simulate form submission (replace with actual EmailJS call)
     setTimeout(() => {
-      // Reset button
       submitButton.text(originalText).prop("disabled", false);
 
-      // Show success message
-
-      // Reset form
+      rm;
       this.reset();
     }, 2000);
   });
@@ -90,10 +97,10 @@ $(document).ready(function () {
     const hamburgerBtn = $("#mobile-menu-btn");
     const heroForm = $("#staticContactForm").parent(); // Get the form container
 
-    // Hide hero form instantly when scrolling starts
-    if (scrollTop > 10) {
+    // Hide hero form instantly when scrolling starts (only if not being used)
+    if (scrollTop > 10 && !isFormBeingUsed) {
       heroForm.fadeOut(200); // Quick fade out
-    } else {
+    } else if (scrollTop <= 10) {
       heroForm.fadeIn(200); // Fade in when back at top
     }
 
