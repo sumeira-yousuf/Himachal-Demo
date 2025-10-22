@@ -1,6 +1,6 @@
 // Hero Slider Form Interaction Functionality
 $(document).ready(function() {
-  // Initialize Owl Carousel
+  // Initialize Owl Carousel for background slides only
   const owl = $(".owl-carousel").owlCarousel({
     items: 1,
     loop: true,
@@ -33,13 +33,44 @@ $(document).ready(function() {
   }
   
   // Add event listeners to all form inputs in hero section
-  $('.owl-carousel input, .owl-carousel textarea').on('focus click input', function() {
+  $('#heroContactForm input, #heroContactForm textarea').on('focus click input', function() {
     resetFormTimer();
   });
   
   // Also pause on any form interaction
-  $('.owl-carousel input, .owl-carousel textarea').on('keydown keyup change', function() {
+  $('#heroContactForm input, #heroContactForm textarea').on('keydown keyup change', function() {
     resetFormTimer();
+  });
+  
+  // Hero form submission
+  $('#heroContactForm').on('submit', function(e) {
+    e.preventDefault();
+    
+    const submitButton = $(this).find('button[type="submit"]');
+    const originalText = submitButton.text();
+    
+    // Show loading state
+    submitButton.text('SENDING...').prop('disabled', true);
+    
+    // Get form data
+    const formData = {
+      name: $(this).find('input[name="name"]').val(),
+      email: $(this).find('input[name="email"]').val(),
+      phone: $(this).find('input[name="phone"]').val(),
+      message: $(this).find('textarea[name="message"]').val()
+    };
+    
+    // Simulate form submission (replace with actual EmailJS call)
+    setTimeout(() => {
+      // Reset button
+      submitButton.text(originalText).prop('disabled', false);
+      
+      // Show success message
+     
+      
+      // Reset form
+      this.reset();
+    }, 2000);
   });
 
   // Back to top button functionality

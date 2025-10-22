@@ -14,6 +14,12 @@ html, body {
   background: rgba(0, 0, 0, 0.5);
 }
 
+/* Hero Section Styles */
+#home {
+  height: 100vh;
+  overflow: hidden;
+}
+
 /* Owl Carousel Styles */
 .owl-carousel .item {
   height: 100vh;
