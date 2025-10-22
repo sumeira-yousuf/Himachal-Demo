@@ -2056,7 +2056,8 @@ Manali & Shimla Honeymoon Packages | Couple Tours | Romantic Tours
     <script src="emailjs-config.js"></script>
 
     <script>
-      $(".owl-carousel").owlCarousel({
+      // Initialize Owl Carousel
+      const owl = $(".owl-carousel").owlCarousel({
         items: 1,
         loop: true,
         autoplay: true,
@@ -2065,6 +2066,36 @@ Manali & Shimla Honeymoon Packages | Couple Tours | Romantic Tours
         dots: false,
         nav: false,
         animateOut: "fadeOut",
+      });
+
+      // Pause slider when user interacts with forms
+      let formInteractionTimer;
+      
+      function pauseSlider() {
+        owl.trigger('stop.owl.autoplay');
+      }
+      
+      function resumeSlider() {
+        owl.trigger('play.owl.autoplay');
+      }
+      
+      function resetFormTimer() {
+        clearTimeout(formInteractionTimer);
+        pauseSlider();
+        
+        formInteractionTimer = setTimeout(function() {
+          resumeSlider();
+        }, 2000); // Resume after 2 seconds of no interaction
+      }
+      
+      // Add event listeners to all form inputs in hero section
+      $('.owl-carousel input, .owl-carousel textarea').on('focus click input', function() {
+        resetFormTimer();
+      });
+      
+      // Also pause on any form interaction
+      $('.owl-carousel input, .owl-carousel textarea').on('keydown keyup change', function() {
+        resetFormTimer();
       });
 
       // Back to top button functionality
