@@ -46,21 +46,43 @@ $(document).ready(function () {
 
   // Track static contact form interactions to prevent hiding during use
   $("#staticContactForm input, #staticContactForm textarea").on(
-    "focus click input keydown keyup change",
+    "focus click input keydown keyup change paste",
     function () {
       isFormBeingUsed = true;
+      console.log("Form being used - preventing hide");
     }
   );
 
-  // Reset form usage flag when user stops interacting
+  // Reset form usage flag when user stops interacting (longer timeout)
   $("#staticContactForm input, #staticContactForm textarea").on(
     "blur",
     function () {
       setTimeout(function () {
-        isFormBeingUsed = false;
-      }, 1000); // Wait 1 second after blur to allow for continued interaction
+        // Only reset if no form field is currently focused
+        if (
+          !$(
+            "#staticContactForm input:focus, #staticContactForm textarea:focus"
+          ).length
+        ) {
+          isFormBeingUsed = false;
+          console.log("Form usage reset");
+        }
+      }, 3000); // Wait 3 seconds after blur to allow for continued interaction
     }
   );
+
+  // Also track when form loses focus completely
+  $("#staticContactForm").on("blur", function () {
+    setTimeout(function () {
+      if (
+        !$("#staticContactForm input:focus, #staticContactForm textarea:focus")
+          .length
+      ) {
+        isFormBeingUsed = false;
+        console.log("Form usage reset from form blur");
+      }
+    }, 2000);
+  });
 
   $("#heroContactForm").on("submit", function (e) {
     e.preventDefault();
@@ -97,11 +119,16 @@ $(document).ready(function () {
     const hamburgerBtn = $("#mobile-menu-btn");
     const heroForm = $("#staticContactForm").parent(); // Get the form container
 
-    // Hide hero form instantly when scrolling starts (only if not being used)
-    if (scrollTop > 10 && !isFormBeingUsed) {
+    // Hide hero form when scrolling (only if not being used)
+    const isFormFocused =
+      $("#staticContactForm input:focus, #staticContactForm textarea:focus")
+        .length > 0;
+    const shouldKeepFormVisible = isFormBeingUsed || isFormFocused;
+
+    if (scrollTop > 10 && !shouldKeepFormVisible) {
       heroForm.fadeOut(200); // Quick fade out
-    } else if (scrollTop <= 10) {
-      heroForm.fadeIn(200); // Fade in when back at top
+    } else if (scrollTop <= 10 || shouldKeepFormVisible) {
+      heroForm.fadeIn(200); // Fade in when back at top or form is being used
     }
 
     if (scrollTop > 100) {
