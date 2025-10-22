@@ -1,0 +1,11 @@
+{
+  "name": "himachal-travel-website",
+  "version": "1.0.0",
+  "description": "GR Travel - Himachal Pradesh Tour Packages Website",
+  "scripts": {
+    "start": "python3 -m http.server $PORT"
+  },
+  "engines": {
+    "python": "3.8"
+  }
+}
