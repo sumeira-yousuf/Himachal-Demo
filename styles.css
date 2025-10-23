@@ -82,3 +82,9 @@ html, body {
 .wave-glow-blue-delayed {
   animation: pulse-wave-blue 1.5s ease-out infinite 0.2s;
 }
+@media (max-width: 768px) {
+  .owl-carousel .item {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

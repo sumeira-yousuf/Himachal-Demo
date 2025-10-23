@@ -12,7 +12,6 @@ $(document).ready(function () {
 
   let formInteractionTimer;
   let isFormBeingUsed = false;
-  let mobileHideTimer = null; // Timer for mobile navbar overlap hiding
 
   function pauseSlider() {
     owl.trigger("stop.owl.autoplay");
@@ -99,8 +98,6 @@ $(document).ready(function () {
 
     setTimeout(() => {
       submitButton.text(originalText).prop("disabled", false);
-
-      rm;
       this.reset();
     }, 2000);
   });
@@ -117,33 +114,8 @@ $(document).ready(function () {
     const hamburgerBtn = $("#mobile-menu-btn");
     const heroForm = $("#staticContactForm").parent(); // Get the form container
 
-    // Form visibility logic
-    const isFormFocused =
-      $("#staticContactForm input:focus, #staticContactForm textarea:focus")
-        .length > 0;
-    const shouldKeepVisible = isFormBeingUsed || isFormFocused;
-    const isMobile = window.innerWidth < 768;
-
-    // Mobile: Hide when navbar overlaps form (with delay)
-    if (isMobile) {
-      const navbarOverlaps =
-        scrollTop + $("#navbar").outerHeight() >= heroForm.offset().top;
-
-      if (navbarOverlaps && !shouldKeepVisible) {
-        clearTimeout(mobileHideTimer);
-        mobileHideTimer = setTimeout(() => heroForm.fadeOut(300), 500);
-      } else {
-        clearTimeout(mobileHideTimer);
-        if (scrollTop <= 50 || shouldKeepVisible) heroForm.fadeIn(200);
-      }
-    } else {
-      // Desktop: Hide on scroll
-      if (scrollTop > 10 && !shouldKeepVisible) {
-        heroForm.fadeOut(200);
-      } else if (scrollTop <= 10 || shouldKeepVisible) {
-        heroForm.fadeIn(200);
-      }
-    }
+    // FORM ALWAYS VISIBLE - NO HIDING LOGIC AT ALL
+    heroForm.fadeIn(200);
 
     if (scrollTop > 100) {
       $(".back-to-top").fadeIn();
