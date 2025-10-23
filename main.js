@@ -11,7 +11,8 @@ $(document).ready(function () {
   });
 
   let formInteractionTimer;
-  let isFormBeingUsed = false; // Track if user is actively using the form
+  let isFormBeingUsed = false;
+  let mobileHideTimer = null; // Timer for mobile navbar overlap hiding
 
   function pauseSlider() {
     owl.trigger("stop.owl.autoplay");
@@ -53,12 +54,10 @@ $(document).ready(function () {
     }
   );
 
-  // Reset form usage flag when user stops interacting (longer timeout)
   $("#staticContactForm input, #staticContactForm textarea").on(
     "blur",
     function () {
       setTimeout(function () {
-        // Only reset if no form field is currently focused
         if (
           !$(
             "#staticContactForm input:focus, #staticContactForm textarea:focus"
@@ -67,11 +66,10 @@ $(document).ready(function () {
           isFormBeingUsed = false;
           console.log("Form usage reset");
         }
-      }, 3000); // Wait 3 seconds after blur to allow for continued interaction
+      }, 3000);
     }
   );
 
-  // Also track when form loses focus completely
   $("#staticContactForm").on("blur", function () {
     setTimeout(function () {
       if (
@@ -119,16 +117,32 @@ $(document).ready(function () {
     const hamburgerBtn = $("#mobile-menu-btn");
     const heroForm = $("#staticContactForm").parent(); // Get the form container
 
-    // Hide hero form when scrolling (only if not being used)
+    // Form visibility logic
     const isFormFocused =
       $("#staticContactForm input:focus, #staticContactForm textarea:focus")
         .length > 0;
-    const shouldKeepFormVisible = isFormBeingUsed || isFormFocused;
+    const shouldKeepVisible = isFormBeingUsed || isFormFocused;
+    const isMobile = window.innerWidth < 768;
 
-    if (scrollTop > 10 && !shouldKeepFormVisible) {
-      heroForm.fadeOut(200); // Quick fade out
-    } else if (scrollTop <= 10 || shouldKeepFormVisible) {
-      heroForm.fadeIn(200); // Fade in when back at top or form is being used
+    // Mobile: Hide when navbar overlaps form (with delay)
+    if (isMobile) {
+      const navbarOverlaps =
+        scrollTop + $("#navbar").outerHeight() >= heroForm.offset().top;
+
+      if (navbarOverlaps && !shouldKeepVisible) {
+        clearTimeout(mobileHideTimer);
+        mobileHideTimer = setTimeout(() => heroForm.fadeOut(300), 500);
+      } else {
+        clearTimeout(mobileHideTimer);
+        if (scrollTop <= 50 || shouldKeepVisible) heroForm.fadeIn(200);
+      }
+    } else {
+      // Desktop: Hide on scroll
+      if (scrollTop > 10 && !shouldKeepVisible) {
+        heroForm.fadeOut(200);
+      } else if (scrollTop <= 10 || shouldKeepVisible) {
+        heroForm.fadeIn(200);
+      }
     }
 
     if (scrollTop > 100) {
