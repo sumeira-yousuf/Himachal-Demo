@@ -356,3 +356,129 @@ $(document).ready(function () {
     }
   });
 });
+// Add this to your existing main.js file
+
+// Enhanced Contact Form Functionality
+$(document).ready(function () {
+  // Set minimum date to today
+  const dateInput = document.getElementById("travelDate");
+  if (dateInput) {
+    const today = new Date().toISOString().split("T")[0];
+    dateInput.setAttribute("min", today);
+
+    // Calendar icon click handler
+    const calendarIcon = document.getElementById("calendarIcon");
+    if (calendarIcon) {
+      calendarIcon.addEventListener("click", function () {
+        dateInput.focus();
+        dateInput.showPicker ? dateInput.showPicker() : dateInput.click();
+      });
+    }
+
+    // Enhanced date input styling and validation
+    dateInput.addEventListener("change", function () {
+      const selectedDate = new Date(this.value);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      if (selectedDate < today) {
+        alert("Please select a future date for your travel");
+        this.value = "";
+        return;
+      }
+
+      // Add visual feedback
+      this.style.borderColor = "#10B981";
+      this.style.backgroundColor = "#F0FDF4";
+
+      setTimeout(() => {
+        this.style.borderColor = "";
+        this.style.backgroundColor = "";
+      }, 1000);
+    });
+  }
+
+  // Auto-focus next field on Enter key
+  const formInputs = $(
+    "#contactModal input, #contactModal select, #contactModal textarea"
+  );
+  formInputs.each(function (index) {
+    $(this).on("keydown", function (e) {
+      if (e.key === "Enter" && this.tagName !== "TEXTAREA") {
+        e.preventDefault();
+        const nextIndex = index + 1;
+        if (nextIndex < formInputs.length) {
+          formInputs.eq(nextIndex).focus();
+        }
+      }
+    });
+  });
+});
+// Perfect Clickable Date Picker
+function openDatePicker() {
+  const dateInput = document.getElementById("travelDate");
+  if (dateInput) {
+    dateInput.style.pointerEvents = "auto";
+    dateInput.focus();
+    if (dateInput.showPicker) {
+      dateInput.showPicker();
+    } else {
+      dateInput.click();
+    }
+    setTimeout(() => {
+      dateInput.style.pointerEvents = "none";
+    }, 100);
+  }
+}
+
+$(document).ready(function () {
+  const dateInput = document.getElementById("travelDate");
+  const dateDisplay = document.getElementById("dateDisplay");
+
+  if (dateInput && dateDisplay) {
+    // Set minimum date to today
+    const today = new Date().toISOString().split("T")[0];
+    dateInput.setAttribute("min", today);
+
+    // Format and display selected date
+    dateInput.addEventListener("change", function () {
+      const selectedDate = new Date(this.value);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      if (selectedDate < today) {
+        alert("Please select a future date for your travel");
+        this.value = "";
+        dateDisplay.textContent = "dd / mm / yyyy";
+        dateDisplay.classList.remove("has-date");
+        return;
+      }
+
+      // Format date as dd / mm / yyyy
+      const day = String(selectedDate.getDate()).padStart(2, "0");
+      const month = String(selectedDate.getMonth() + 1).padStart(2, "0");
+      const year = selectedDate.getFullYear();
+
+      dateDisplay.textContent = `${day} / ${month} / ${year}`;
+      dateDisplay.classList.add("has-date");
+
+      // Visual feedback
+      const container = dateDisplay.closest("div").parentElement;
+      container.style.borderColor = "#10B981";
+      container.style.backgroundColor = "#F0FDF4";
+
+      setTimeout(() => {
+        container.style.borderColor = "";
+        container.style.backgroundColor = "";
+      }, 1000);
+    });
+
+    // Reset display if date is cleared
+    dateInput.addEventListener("input", function () {
+      if (!this.value) {
+        dateDisplay.textContent = "dd / mm / yyyy";
+        dateDisplay.classList.remove("has-date");
+      }
+    });
+  }
+});
