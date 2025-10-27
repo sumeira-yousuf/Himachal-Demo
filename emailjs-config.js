@@ -28,7 +28,7 @@ class EmailJSHandler {
           formId === "bookingModalForm" ||
           (formParent && formParent.id === "contactModal")
         ) {
-          subject = "Himachal Tour Package - Bestselling Himachal Packages";
+          subject = "Himachal Tour Package -Package Form Lead";
         } else if (
           formId === "callbackModalForm" ||
           (formParent && formParent.id === "callbackModal")
