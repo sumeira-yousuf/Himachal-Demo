@@ -98,7 +98,7 @@ $(document).ready(function () {
 
     if (scrollTop > 100) {
       $(".back-to-top").fadeIn();
-     g
+      // Add white background and dark text when scrolling
       navbar
         .removeClass("bg-transparent text-white")
         .addClass("bg-white text-gray-900 shadow-md");
