@@ -81,26 +81,7 @@ $(document).ready(function () {
     }, 2000);
   });
 
-  $("#heroContactForm").on("submit", function (e) {
-    e.preventDefault();
-
-    const submitButton = $(this).find('button[type="submit"]');
-    const originalText = submitButton.text();
-
-    submitButton.text("SENDING...").prop("disabled", true);
-
-    const formData = {
-      name: $(this).find('input[name="name"]').val(),
-      email: $(this).find('input[name="email"]').val(),
-      phone: $(this).find('input[name="phone"]').val(),
-      message: $(this).find('textarea[name="message"]').val(),
-    };
-
-    setTimeout(() => {
-      submitButton.text(originalText).prop("disabled", false);
-      this.reset();
-    }, 2000);
-  });
+  // Form submission is now handled by emailjs-config.js which redirects to success.html
 
   // Back to top button functionality
   $(".back-to-top").hide();
@@ -204,6 +185,8 @@ $(document).ready(function () {
   $("#closeModal").click(function () {
     modal.addClass("hidden");
     $("body").removeClass("overflow-hidden");
+    // Reset form when closing modal
+    $("#bookingModalForm")[0]?.reset();
   });
 
   // Callback modal handlers
@@ -216,6 +199,8 @@ $(document).ready(function () {
   $("#closeCallbackModal").click(function () {
     callbackModal.addClass("hidden");
     $("body").removeClass("overflow-hidden");
+    // Reset form when closing modal
+    $("#callbackModalForm")[0]?.reset();
   });
 
   // Close modals when clicking outside

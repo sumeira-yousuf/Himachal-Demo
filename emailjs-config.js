@@ -1,4 +1,3 @@
-
 const EMAILJS_CONFIG = {
   USER_ID: "st7TIIV_ztcXD_aif",
   SERVICE_ID: "service_wzfo9df",
@@ -9,20 +8,44 @@ const EMAILJS_CONFIG = {
   emailjs.init(EMAILJS_CONFIG.USER_ID);
 })();
 
-
 class EmailJSHandler {
   constructor() {
     this.isInitialized = typeof emailjs !== "undefined";
   }
 
-  
-  async sendEmail(formData) {
+  async sendEmail(formData, formElement = null) {
     if (!this.isInitialized) {
       throw new Error("EmailJS not initialized");
     }
 
     try {
+      // Determine subject based on which form is being submitted
+      let subject = "Himachal Tour Package - Contact Form";
+      if (formElement) {
+        const formId = formElement.id;
+        const formParent = formElement.closest("#contactModal, #callbackModal");
+
+        if (
+          formId === "bookingModalForm" ||
+          (formParent && formParent.id === "contactModal")
+        ) {
+          subject = "Himachal Tour Package - Booking Enquiry";
+        } else if (
+          formId === "callbackModalForm" ||
+          (formParent && formParent.id === "callbackModal")
+        ) {
+          subject = "Himachal Tour Package - Callback Request";
+        } else if (formId === "staticContactForm" || formId === "staticContactFormMobile") {
+          subject = "Himachal Tour Package - Hero Contact Form";
+        } else if (formId === "footerContactForm") {
+          subject = "Himachal Tour Package - Footer Contact Form";
+        } else if (formId === "customizeTripForm") {
+          subject = "Himachal Tour Package - Customise Your Trip";
+        }
+      }
+
       const templateParams = {
+        title: subject, // Map to 'title' to match EmailJS template variable {{title}}
         from_name: formData.name,
         from_email: formData.email,
         phone: formData.phone || formData.phonenumber,
@@ -100,34 +123,55 @@ class EmailJSHandler {
     return formData;
   }
 
-  
-  showSuccessMessage(form, button) {
-    const originalText = button.textContent;
-    button.textContent = "Sent Successfully!";
-    button.classList.add("bg-green-600");
+  showProgressBar(form, button) {
     button.disabled = true;
 
+    // Create unique ID for progress bar
+    const progressFillId = "progressFill_" + Date.now();
+
+    // Store original button content
+    const originalContent = button.innerHTML;
+
+    // Create progress bar inside button
+    button.innerHTML = `
+      <div class="flex items-center justify-center">
+        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <span>Sending...</span>
+      </div>
+    `;
+  }
+
+  showSuccessMessage(form, button) {
+    // Update button to show success state
+    button.innerHTML = `<span>✓ Sent Successfully!</span>`;
+    
+    // Clear all error messages
+    form.querySelectorAll(".error-message").forEach((error) => error.remove());
+    form.querySelectorAll("input, textarea").forEach((input) => {
+      input.classList.remove("border-red-500");
+      input.classList.add("border-gray-300");
+    });
+
+    // Reset form fields
+    form.reset();
+
+    // Redirect to success page after 1.5 seconds
     setTimeout(() => {
-      form.reset();
-      button.textContent = originalText;
-      button.classList.remove("bg-green-600");
-      button.disabled = false;
-      form
-        .querySelectorAll(".error-message")
-        .forEach((error) => error.remove());
-      form.querySelectorAll("input, textarea").forEach((input) => {
-        input.classList.remove("border-red-500");
-        input.classList.add("border-gray-300");
-      });
-    }, 3000);
+      window.location.href = "thank-you.html";
+    }, 1500);
   }
 
   // Show error message
   showErrorMessage(form, button, errorMessage) {
-    const originalText = button.textContent;
-    button.textContent = "Error - Try Again";
+    // Update button to show error state
+    button.innerHTML = `
+      <span>Error - Try Again</span>
+    `;
     button.classList.add("bg-red-500");
-    button.disabled = true;
+    button.disabled = false;
 
     const errorDiv = document.createElement("div");
     errorDiv.className = "error-message text-red-500 text-sm mt-2 text-center";
@@ -135,10 +179,11 @@ class EmailJSHandler {
       errorMessage || "Failed to send message. Please try again.";
     form.appendChild(errorDiv);
 
+    // Reset button after 5 seconds with original content
     setTimeout(() => {
-      button.textContent = originalText;
+      const originalContent = button.getAttribute("data-original-content") || "SUBMIT";
+      button.innerHTML = originalContent;
       button.classList.remove("bg-red-500");
-      button.disabled = false;
       errorDiv.remove();
     }, 5000);
   }
@@ -157,13 +202,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const submitButton = form.querySelector('button[type="submit"]');
       const originalText = submitButton.textContent;
+      
+      // Store original content for error handling
+      submitButton.setAttribute("data-original-content", originalText);
 
-      submitButton.textContent = "Sending...";
-      submitButton.disabled = true;
+      // Show progress indicator inside button
+      emailHandler.showProgressBar(form, submitButton);
 
       try {
         const formData = emailHandler.extractFormData(form);
-        const result = await emailHandler.sendEmail(formData);
+        const result = await emailHandler.sendEmail(formData, form);
 
         if (result.success) {
           emailHandler.showSuccessMessage(form, submitButton);
@@ -173,7 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => {
               modal.classList.add("hidden");
               document.body.classList.remove("overflow-hidden");
-            }, 2000);
+            }, 1500);
           }
         } else {
           emailHandler.showErrorMessage(form, submitButton, result.error);
