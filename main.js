@@ -44,7 +44,7 @@ $(document).ready(function () {
     }
   );
 
-  // Track static contact form interactions to prevent hiding during use
+ 
   $("#staticContactForm input, #staticContactForm textarea").on(
     "focus click input keydown keyup change paste",
     function () {
@@ -81,26 +81,24 @@ $(document).ready(function () {
     }, 2000);
   });
 
-  // Form submission is now handled by emailjs-config.js which redirects to success.html
-
-  // Back to top button functionality
+ 
   $(".back-to-top").hide();
 
-  // Show/hide back to top button and navbar styling based on scroll position
+  
   $(window).scroll(function () {
     const scrollTop = $(this).scrollTop();
     const navbar = $("#navbar");
     const logo = $("#navbar-logo");
     const mobileLogo = $("#navbar-logo-mobile");
     const hamburgerBtn = $("#mobile-menu-btn");
-    const heroForm = $("#staticContactForm").parent(); // Get the form container
+    const heroForm = $("#staticContactForm").parent(); 
 
-    // FORM ALWAYS VISIBLE - NO HIDING LOGIC AT ALL
+   
     heroForm.fadeIn(200);
 
     if (scrollTop > 100) {
       $(".back-to-top").fadeIn();
-      // Add white background and dark text when scrolling
+     g
       navbar
         .removeClass("bg-transparent text-white")
         .addClass("bg-white text-gray-900 shadow-md");
@@ -127,19 +125,19 @@ $(document).ready(function () {
     }
   });
 
-  // Smooth scroll to top when button is clicked
+
   $(".back-to-top").click(function () {
     $("html, body").animate({ scrollTop: 0 }, 800);
     return false;
   });
 
-  // Mobile menu functionality
+
   $("#mobile-menu-btn").click(function () {
     $("#mobile-menu").removeClass("hidden");
-    // Prevent scrolling
+  
     $("body").css("overflow", "hidden");
     $("html").css("overflow", "hidden");
-    // Switch icons
+
     $("#hamburger-icon").addClass("hidden");
     $("#close-icon").removeClass("hidden");
   });
@@ -148,12 +146,12 @@ $(document).ready(function () {
     closeMobileMenu();
   });
 
-  // Close mobile menu when clicking on nav links
+  
   $(".mobile-nav-link").click(function () {
     closeMobileMenu();
   });
 
-  // Close mobile menu when clicking outside
+ 
   $("#mobile-menu").click(function (e) {
     if (e.target === this) {
       closeMobileMenu();
@@ -171,11 +169,10 @@ $(document).ready(function () {
     $("#close-icon").addClass("hidden");
   }
 
-  // Modal functionality
+
   const modal = $("#contactModal");
   const callbackModal = $("#callbackModal");
 
-  // Contact modal handlers (enquire buttons and contact button)
   $(".enquire-btn, .contact-btn").click(function (e) {
     e.preventDefault();
     modal.removeClass("hidden");
@@ -199,11 +196,11 @@ $(document).ready(function () {
   $("#closeCallbackModal").click(function () {
     callbackModal.addClass("hidden");
     $("body").removeClass("overflow-hidden");
-    // Reset form when closing modal
+   
     $("#callbackModalForm")[0]?.reset();
   });
 
-  // Close modals when clicking outside
+  
   modal.click(function (e) {
     if (e.target === this) {
       modal.addClass("hidden");
@@ -218,17 +215,17 @@ $(document).ready(function () {
     }
   });
 
-  // Close modals with Escape key
+ 
   $(document).keyup(function (e) {
     if (e.keyCode === 27) {
-      // Escape key
+      
       modal.addClass("hidden");
       callbackModal.addClass("hidden");
       $("body").removeClass("overflow-hidden");
     }
   });
 
-  // Smooth scrolling for navigation links
+s
   $(".nav-link").click(function (e) {
     e.preventDefault();
     const target = $(this).attr("href");
@@ -421,11 +418,11 @@ $(document).ready(function () {
   const dateDisplay = document.getElementById("dateDisplay");
 
   if (dateInput && dateDisplay) {
-    // Set minimum date to today
+  
     const today = new Date().toISOString().split("T")[0];
     dateInput.setAttribute("min", today);
 
-    // Format and display selected date
+    
     dateInput.addEventListener("change", function () {
       const selectedDate = new Date(this.value);
       const today = new Date();
@@ -439,7 +436,7 @@ $(document).ready(function () {
         return;
       }
 
-      // Format date as dd / mm / yyyy
+   
       const day = String(selectedDate.getDate()).padStart(2, "0");
       const month = String(selectedDate.getMonth() + 1).padStart(2, "0");
       const year = selectedDate.getFullYear();
@@ -447,7 +444,7 @@ $(document).ready(function () {
       dateDisplay.textContent = `${day} / ${month} / ${year}`;
       dateDisplay.classList.add("has-date");
 
-      // Visual feedback
+     
       const container = dateDisplay.closest("div").parentElement;
       container.style.borderColor = "#10B981";
       container.style.backgroundColor = "#F0FDF4";
@@ -458,11 +455,115 @@ $(document).ready(function () {
       }, 1000);
     });
 
-    // Reset display if date is cleared
+   
     dateInput.addEventListener("input", function () {
       if (!this.value) {
         dateDisplay.textContent = "dd / mm / yyyy";
         dateDisplay.classList.remove("has-date");
+      }
+    });
+  }
+});
+
+// Custom Date Picker for Customize Trip Form
+function openDatePickerCustom() {
+  const dateInput = document.getElementById("travelDateCustom");
+  if (dateInput) {
+    dateInput.style.pointerEvents = "auto";
+    dateInput.focus();
+    if (dateInput.showPicker) {
+      dateInput.showPicker();
+    } else {
+      dateInput.click();
+    }
+    setTimeout(() => {
+      dateInput.style.pointerEvents = "none";
+    }, 100);
+  }
+}
+
+$(document).ready(function () {
+  const dateInputCustom = document.getElementById("travelDateCustom");
+  const dateDisplayCustom = document.getElementById("dateDisplayCustom");
+
+  if (dateInputCustom && dateDisplayCustom) {
+    const today = new Date().toISOString().split("T")[0];
+    dateInputCustom.setAttribute("min", today);
+
+    dateInputCustom.addEventListener("change", function () {
+      const selectedDate = new Date(this.value);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      if (selectedDate < today) {
+        alert("Please select a future date for your travel");
+        this.value = "";
+        dateDisplayCustom.textContent = "dd / mm / yyyy";
+        return;
+      }
+
+      const day = String(selectedDate.getDate()).padStart(2, "0");
+      const month = String(selectedDate.getMonth() + 1).padStart(2, "0");
+      const year = selectedDate.getFullYear();
+
+      dateDisplayCustom.textContent = `${day} / ${month} / ${year}`;
+    });
+
+    dateInputCustom.addEventListener("input", function () {
+      if (!this.value) {
+        dateDisplayCustom.textContent = "dd / mm / yyyy";
+      }
+    });
+  }
+});
+
+// Footer Date Picker
+function openDatePickerFooter() {
+  const dateInput = document.getElementById("travelDateFooter");
+  if (dateInput) {
+    dateInput.style.pointerEvents = "auto";
+    dateInput.focus();
+    if (dateInput.showPicker) {
+      dateInput.showPicker();
+    } else {
+      dateInput.click();
+    }
+    setTimeout(() => {
+      dateInput.style.pointerEvents = "none";
+    }, 100);
+  }
+}
+
+$(document).ready(function () {
+  const dateInputFooter = document.getElementById("travelDateFooter");
+  const dateDisplayFooter = document.getElementById("dateDisplayFooter");
+
+  if (dateInputFooter && dateDisplayFooter) {
+    const today = new Date().toISOString().split("T")[0];
+    dateInputFooter.setAttribute("min", today);
+
+    dateInputFooter.addEventListener("change", function () {
+      const selectedDate = new Date(this.value);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      if (selectedDate < today) {
+        alert("Please select a future date for your travel");
+        this.value = "";
+        dateDisplayFooter.textContent = "dd / mm / yyyy";
+        return;
+      }
+
+      const day = String(selectedDate.getDate()).padStart(2, "0");
+      const month = String(selectedDate.getMonth() + 1).padStart(2, "0");
+      const year = selectedDate.getFullYear();
+
+      dateDisplayFooter.textContent = `${day} / ${month} / ${year}`;
+    });
+
+    dateInputFooter.addEventListener("input", function () {
+      if (!this.value) {
+        dateDisplayFooter.textContent = "dd / mm / yyyy";
       }
     });
   }

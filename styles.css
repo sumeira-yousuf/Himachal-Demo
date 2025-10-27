@@ -1,39 +1,35 @@
-/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
-/* Overlay Styles */
 .overlay {
   background: rgba(0, 0, 0, 0.5);
 }
 
-/* Hero Section Styles */
 #home {
   height: 100vh;
   overflow: hidden;
 }
 
-/* Owl Carousel Styles */
 .owl-carousel .item {
   height: 100vh;
   background-size: cover;
   background-position: center;
 }
 
-/* Quicksand Font Classes */
 .quicksand-light {
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-}/* Add this to your styles.css file */
+} /* Add this to your styles.css file */
 
 /* Fix dropdown direction - force downward opening */
 .dropdown-bottom {
@@ -113,7 +109,7 @@ select.dropdown-bottom {
     padding-right: 20px;
   }
 }
-/* Modern Date Picker Styles */
+
 #datePickerContainer {
   transition: all 0.2s ease-in-out;
 }

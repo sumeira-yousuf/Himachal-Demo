@@ -19,7 +19,7 @@ class EmailJSHandler {
     }
 
     try {
-      // Determine subject based on which form is being submitted
+     
       let subject = "Himachal Tour Package - Contact Form";
       if (formElement) {
         const formId = formElement.id;

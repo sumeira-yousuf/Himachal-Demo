@@ -1667,8 +1667,30 @@
               <input type="email" name="email" placeholder="Email"
                 class="p-3 rounded text-black bg-white border border-gray-300 focus:border-blue-500 focus:outline-none"
                 required />
-              <input type="date" name="dateOfTravel" placeholder="Date of Travel"
-                class="p-3 rounded text-black bg-white border border-gray-300 focus:border-blue-500 focus:outline-none" />
+              <!-- Custom Date Picker -->
+              <div class="relative">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Date of Travel</label>
+                <div class="relative">
+                  <div
+                    class="flex items-center w-full p-3 border border-gray-300 rounded focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500 bg-white cursor-pointer transition-all duration-200 hover:border-gray-400"
+                    onclick="openDatePickerCustom()">
+                    <div class="flex items-center justify-center w-8 h-6 bg-gradient-to-r from-blue-500 to-blue-600 rounded mr-2 shadow-sm pointer-events-none">
+                      <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-1 flex items-center pointer-events-none">
+                      <span id="dateDisplayCustom" class="text-sm text-gray-500 select-none cursor-pointer">dd / mm / yyyy</span>
+                    </div>
+                    <div class="ml-2 pointer-events-none">
+                      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <input id="travelDateCustom" type="date" name="dateOfTravel" class="absolute top-0 left-0 w-full h-full opacity-0 pointer-events-none" min="" />
+                </div>
+              </div>
             </div>
             <div class="mb-6">
               <textarea name="message" placeholder="Trip Details" rows="4"
@@ -1702,12 +1724,34 @@
                 class="w-full p-2.5 rounded border border-gray-300 focus:border-blue-500 focus:outline-none bg-white text-sm"
                 required />
             </div>
-            <div class="flex itmes-center items-center gap-2">
+            <div class="flex flex-col md:flex-row items-center gap-2">
               <input type="email" name="email" placeholder="Email"
                 class="w-full p-2.5 rounded border border-gray-300 focus:border-blue-500 focus:outline-none bg-white text-sm"
                 required />
-              <input type="date" name="dateOfTravel" placeholder="Date of Travel"
-                class="w-full p-2.5 rounded border border-gray-300 focus:border-blue-500 focus:outline-none bg-white text-sm" />
+              <!-- Custom Date Picker -->
+              <div class="relative w-full">
+                <label class="block text-xs font-medium text-gray-700 mb-1">Date of Travel</label>
+                <div class="relative">
+                  <div
+                    class="flex items-center w-full p-2.5 border border-gray-300 rounded focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500 bg-white cursor-pointer transition-all duration-200 hover:border-gray-400"
+                    onclick="openDatePickerFooter()">
+                    <div class="flex items-center justify-center w-7 h-5 bg-gradient-to-r from-blue-500 to-blue-600 rounded mr-2 shadow-sm pointer-events-none">
+                      <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-1 flex items-center pointer-events-none">
+                      <span id="dateDisplayFooter" class="text-xs text-gray-500 select-none cursor-pointer">dd / mm / yyyy</span>
+                    </div>
+                    <div class="ml-2 pointer-events-none">
+                      <svg class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <input id="travelDateFooter" type="date" name="dateOfTravel" class="absolute top-0 left-0 w-full h-full opacity-0 pointer-events-none" min="" />
+                </div>
+              </div>
             </div>
             <textarea name="message" placeholder="Trip Details" rows="3"
               class="w-full p-2.5 rounded border border-gray-300 focus:border-blue-500 focus:outline-none resize-none bg-white text-sm"></textarea>
