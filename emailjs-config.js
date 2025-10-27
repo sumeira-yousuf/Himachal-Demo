@@ -1,11 +1,11 @@
 const EMAILJS_CONFIG = {
-  USER_ID: "st7TIIV_ztcXD_aif",
+  PUBLIC_KEY: "st7TIIV_ztcXD_aif",
   SERVICE_ID: "service_wzfo9df",
   TEMPLATE_ID: "template_i5xrfto",
 };
 
 (function () {
-  emailjs.init(EMAILJS_CONFIG.USER_ID);
+  emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
 })();
 
 class EmailJSHandler {
@@ -19,7 +19,6 @@ class EmailJSHandler {
     }
 
     try {
-     
       let subject = "Himachal Tour Package - Contact Form";
       if (formElement) {
         const formId = formElement.id;
@@ -35,7 +34,10 @@ class EmailJSHandler {
           (formParent && formParent.id === "callbackModal")
         ) {
           subject = "Himachal Tour Package - Callback Request";
-        } else if (formId === "staticContactForm" || formId === "staticContactFormMobile") {
+        } else if (
+          formId === "staticContactForm" ||
+          formId === "staticContactFormMobile"
+        ) {
           subject = "Himachal Tour Package - Hero Contact Form";
         } else if (formId === "footerContactForm") {
           subject = "Himachal Tour Package - Footer Contact Form";
@@ -73,7 +75,6 @@ class EmailJSHandler {
     }
   }
 
-  // Extract form data from form element
   extractFormData(form) {
     const formData = {};
     const inputs = form.querySelectorAll("input, textarea");
@@ -126,13 +127,10 @@ class EmailJSHandler {
   showProgressBar(form, button) {
     button.disabled = true;
 
-    // Create unique ID for progress bar
     const progressFillId = "progressFill_" + Date.now();
 
-    // Store original button content
     const originalContent = button.innerHTML;
 
-    // Create progress bar inside button
     button.innerHTML = `
       <div class="flex items-center justify-center">
         <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -145,20 +143,16 @@ class EmailJSHandler {
   }
 
   showSuccessMessage(form, button) {
-    // Update button to show success state
     button.innerHTML = `<span>✓ Sent Successfully!</span>`;
-    
-    // Clear all error messages
+
     form.querySelectorAll(".error-message").forEach((error) => error.remove());
     form.querySelectorAll("input, textarea").forEach((input) => {
       input.classList.remove("border-red-500");
       input.classList.add("border-gray-300");
     });
 
-    // Reset form fields
     form.reset();
 
-    // Redirect to success page after 1.5 seconds
     setTimeout(() => {
       window.location.href = "thank-you.html";
     }, 1500);
@@ -181,7 +175,8 @@ class EmailJSHandler {
 
     // Reset button after 5 seconds with original content
     setTimeout(() => {
-      const originalContent = button.getAttribute("data-original-content") || "SUBMIT";
+      const originalContent =
+        button.getAttribute("data-original-content") || "SUBMIT";
       button.innerHTML = originalContent;
       button.classList.remove("bg-red-500");
       errorDiv.remove();
@@ -202,11 +197,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const submitButton = form.querySelector('button[type="submit"]');
       const originalText = submitButton.textContent;
-      
-      // Store original content for error handling
+
       submitButton.setAttribute("data-original-content", originalText);
 
-      // Show progress indicator inside button
       emailHandler.showProgressBar(form, submitButton);
 
       try {
