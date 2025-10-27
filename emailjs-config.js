@@ -28,7 +28,7 @@ class EmailJSHandler {
           formId === "bookingModalForm" ||
           (formParent && formParent.id === "contactModal")
         ) {
-          subject = "Himachal Tour Package - Booking Enquiry";
+          subject = "Himachal Tour Package - Bestselling Himachal Packages";
         } else if (
           formId === "callbackModalForm" ||
           (formParent && formParent.id === "callbackModal")
@@ -38,7 +38,7 @@ class EmailJSHandler {
           formId === "staticContactForm" ||
           formId === "staticContactFormMobile"
         ) {
-          subject = "Himachal Tour Package - Hero Contact Form";
+          subject = "Himachal Tour Package - Banner Form Lead";
         } else if (formId === "footerContactForm") {
           subject = "Himachal Tour Package - Footer Contact Form";
         } else if (formId === "customizeTripForm") {
