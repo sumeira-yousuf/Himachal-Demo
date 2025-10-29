@@ -111,7 +111,7 @@
     <div class="item relative" style="background-image: url('public/slide3.webp');">
       <div class="overlay absolute inset-0 flex flex-col justify-between text-white">
         <div
-          class="flex flex-col md:flex-row justify-center md:justify-between items-center w-full px-4 md:px-20 py-20 md:py-0 flex-grow">
+          class="flex flex-col md:flex-row justify-between items-center w-full px-4 md:px-20 py-20 md:py-0 flex-grow">
           <div class="w-full md:w-1/2 space-y-4">
             <h1 class="text-2xl md:text-4xl font-bold quicksand-bold">
               Himachal Pradesh Tour Packages
@@ -168,7 +168,7 @@
     <div class="item relative" style="background-image: url('public/Banner7.webp');">
       <div class="overlay absolute inset-0 flex flex-col justify-between text-white">
         <div
-          class="flex flex-col md:flex-row justify-center md:justify-between items-center w-full px-6 md:px-20 py-32 md:py-0 flex-grow">
+          class="flex flex-col md:flex-row justify-between items-center w-full px-6 md:px-20 py-20 md:py-0 flex-grow">
           <div class="w-full md:w-1/2 space-y-4">
             <h1 class="text-2xl md:text-4xl font-bold quicksand-bold">
               Plan Your Perfect Shimla Manali Honeymoon
@@ -214,7 +214,7 @@
       <div class="overlay absolute inset-0 flex flex-col justify-between text-white">
         <!-- Content Area -->
         <div
-          class="flex flex-col md:flex-row justify-center md:justify-between items-center w-full px-6 md:px-20 py-32 md:py-0 flex-grow">
+          class="flex flex-col md:flex-row justify-between items-center w-full px-6 md:px-20 py-20 md:py-0 flex-grow">
           <!-- Left Content -->
           <div class="w-full md:w-1/2 space-y-4">
             <h1 class="text-2xl md:text-4xl font-bold quicksand-bold">
@@ -265,15 +265,15 @@
   </div>
 
   <!-- Static Contact Form - Hidden on mobile, shown on desktop -->
-  <div class="hidden md:block absolute top-1/2 right-[150px] transform -translate-y-1/2 z-30 w-96">
-    <div class="bg-black bg-opacity-70 p-5 rounded shadow-lg">
-      <h2 class="text-center text-xl font-bold mb-4 text-white">CONTACT US</h2>
+  <div class=" absolute top-[77%] md:top-1/2 md:right-[150px] transform -translate-y-1/2 z-30 w-full md:px-0 px-4 md:w-96">
+    <div class="bg-black bg-opacity-70 p-3 md:p-5 rounded shadow-lg">
+      <h2 class="text-center text-xl font-bold mb-2 md:mb-4 text-white">CONTACT US</h2>
       <form id="staticContactForm" class="flex flex-col space-y-3">
         <input type="text" name="name" placeholder="Name" class="p-2 rounded text-black" required />
         <input type="email" name="email" placeholder="Email" class="p-2 rounded text-black" required />
         <input type="tel" name="phone" placeholder="Phone Number" class="p-2 rounded text-black" required />
         <textarea name="message" placeholder="Enter Your Trip Details" class="p-2 rounded text-black"
-          rows="3"></textarea>
+          rows="2"></textarea>
         <button type="submit"
           class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded transition-colors">
           START A TRIP REQUEST
@@ -282,25 +282,7 @@
     </div>
   </div>
 
-  <!-- Static Contact Form - Mobile Version (Shown on mobile, hidden on desktop) -->
-  <section class="md:hidden py-8 px-4 bg-gradient-to-b from-transparent to-gray-50">
-    <div class="max-w-md mx-auto">
-      <div class="bg-white shadow-xl p-6 rounded-lg">
-        <h2 class="text-center text-2xl font-bold mb-4 text-gray-800">CONTACT US</h2>
-        <form id="staticContactFormMobile" class="flex flex-col space-y-3 w-full">
-          <input type="text" name="name" placeholder="Name" class="w-full p-3 rounded border border-gray-300 focus:border-blue-500 focus:outline-none" required />
-          <input type="email" name="email" placeholder="Email" class="w-full p-3 rounded border border-gray-300 focus:border-blue-500 focus:outline-none" required />
-          <input type="tel" name="phone" placeholder="Phone Number" class="w-full p-3 rounded border border-gray-300 focus:border-blue-500 focus:outline-none" required />
-          <textarea name="message" placeholder="Enter Your Trip Details" class="w-full p-3 rounded border border-gray-300 focus:border-blue-500 focus:outline-none resize-none"
-            rows="3"></textarea>
-          <button type="submit"
-            class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 rounded transition-colors text-center">
-            START A TRIP REQUEST
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- Call Back Request Section -->
   <section class="bg-opacity-90 flex flex-col md:flex-row justify-between  items-center px-6 md:px-20 py-4"
@@ -316,7 +298,7 @@
   <!-- Bestselling Himachal Package Section -->
   <section class="bg-white py-16 px-6 md:px-20 relative" id="packages">
     <!-- Floating Action Buttons -->
-    <div class="fixed right-6 top-1/2 transform -translate-y-1/2 z-30 flex flex-col gap-4">
+    <div class="fixed right-6 bottom-6 z-30 flex flex-col gap-4">
       <a href="tel:+918899001751"
         class="w-12 h-12 bg-yellow-500 hover:bg-yellow-600 rounded-full shadow-lg flex items-center justify-center text-white transition-colors wave-glow-blue group">
         <i class="fas fa-phone text-lg group-hover:text-blue-500 transition-colors duration-300"></i>
@@ -1670,7 +1652,7 @@
                 required />
               <!-- Custom Date Picker -->
               <div class="relative">
-                <label class="block text-sm font-medium text-gray-700 mb-1">Date of Travel</label>
+                <!-- <label class="block text-sm font-medium text-gray-700 mb-1">Date of Travel</label> -->
                 <div class="relative">
                   <div
                     class="flex items-center w-full p-3 border border-gray-300 rounded focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500 bg-white cursor-pointer transition-all duration-200 hover:border-gray-400"
@@ -1709,12 +1691,12 @@
 
   <!-- Footer Section -->
   <!-- Footer Section -->
-  <footer class="bg-gray-100 py-8 px-6 md:px-20" id="contact">
-    <div class="max-w-7xl mx-auto">
+  <footer class="bg-gray-100 py-8 px-6 md:px-11" id="contact">
+    <div class="w-full">
       <div class="flex flex-col md:flex-row gap-6 md:gap-8 md:justify-between">
 
         <!-- Contact Us Section -->
-        <div class="flex flex-col flex-1 min-w-0">
+        <div class="flex flex-col  md:flex-[1.4]">
           <h3 class="text-2xl font-bold text-gray-800 mb-4">Contact Us</h3>
           <form id="footerContactForm" class="space-y-3">
             <div class="flex flex-row items-center gap-2">
@@ -1731,7 +1713,7 @@
                 required />
               <!-- Custom Date Picker -->
               <div class="relative w-full">
-                <label class="block text-xs font-medium text-gray-700 mb-1">Date of Travel</label>
+                <!-- <label class="block text-xs font-medium text-gray-700 mb-1">Date of Travel</label> -->
                 <div class="relative">
                   <div
                     class="flex items-center w-full p-2.5 border border-gray-300 rounded focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500 bg-white cursor-pointer transition-all duration-200 hover:border-gray-400"
@@ -1757,7 +1739,7 @@
             <textarea name="message" placeholder="Trip Details" rows="3"
               class="w-full p-2.5 rounded border border-gray-300 focus:border-blue-500 focus:outline-none resize-none bg-white text-sm"></textarea>
             <button type="submit"
-              class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 rounded uppercase transition-colors text-sm">
+              class="mx-auto w-[50%] bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded uppercase transition-colors text-sm">
               LETS START
             </button>
           </form>
